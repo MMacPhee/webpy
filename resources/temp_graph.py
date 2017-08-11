@@ -8,4 +8,4 @@ x = [1, 2, 3, 4, 5]
 y = [1, 2, 3, 4, 5]
 
 matplotlib.pyplot.scatter(x, y)
-pylab.savefig('graph.png')
+pylab.savefig('static/images/graph.png')
