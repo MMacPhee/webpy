@@ -1,4 +1,5 @@
 import web
+from resources import temp_graph
 
 urls = (
 	'/', 'home',
@@ -28,6 +29,16 @@ class calendar:
 
 class fermentation:
 	def GET(self):
+		file = open("resources/number.txt", "r+")
+		try:
+			number = int(file.read(1))
+		except:
+			number = 1
+		print("Trying to write number: " + str(number))
+		file.seek(0)
+		file.write(str(number+1))
+		file.close()
+		temp_graph.Graph.generateGraph()
 		return render.fermentation()
 
 if __name__ == "__main__":
